@@ -10,16 +10,16 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     function index(){
-        $todayMovies = Movie::today()->get();
-        $upcomingMovies = Movie::upcoming()->get();
+        $todayMovies = Movie::today()->paginate(12);
+        $upcomingMovies = Movie::upcoming()->paginate(12);
 
 //========== Georgian movies down below.=========================
-        $category = MovieCategories::where('category', '=', 'GEO')->get();
+        $category = MovieCategories::where('category', '=', 'GEO')->paginate(12);
         $geo = [];
         foreach ($category as $cat) {
             $geo[] = $cat->movie_id;
         }
-        $geoMovies = Movie::whereIn('id', $geo)->get();
+        $geoMovies = Movie::whereIn('id', $geo)->paginate(12);
 // ==========================================================
 
 

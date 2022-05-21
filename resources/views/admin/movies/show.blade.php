@@ -3,10 +3,10 @@
 @section('content')
     <div class="h-auto">
         <div class="container-fluid position-relative bg-dark">
-            <div style="height: 40vh; width: 100%" class="d-flex justify-content-center align-items-center">
+            <div style="height: 60vh; width: 100%" class="d-flex justify-content-center align-items-center pt-3">
                 <img src="{{ $movie->movie_thumbnail }}" alt="{{ $movie->movie_name }}" style="
-                object-fit: cover;
-                width: 100%;
+                object-fit: fill;
+                width: auto;
                 height: 100%;
                ">
             </div>
@@ -33,7 +33,7 @@
                     @endforeach
                 </div>
                 <div class="w-50 text-center m-5">
-                    <a href="/movies/buy_ticket/{{ $movie->id }}" class="btn btn-outline-light m-auto">Buy ticket</a>
+                    <a href="/sessions/{{ $movie->id }}" class="btn btn-outline-light m-auto">Buy ticket</a>
                     @auth()
                         @if(Auth::user()->role == '1')
 
@@ -52,8 +52,7 @@
 
                             <div class="btn-group d-flex justify-content-center align-items-center mb-5 mt-5">
                                 <a href="/movie/edit/{{$movie->id}}" class="btn btn-outline-primary w-50 rounded">Edit</a>
-                                <form action="/movie/delete/{{$movie->id}}" method="POST" class="w-50">
-                                    @csrf
+                                <form action="/movie/delete/{{$movie->id}}" class="w-50">
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-outline-danger w-100">Delete</button>
                                 </form>

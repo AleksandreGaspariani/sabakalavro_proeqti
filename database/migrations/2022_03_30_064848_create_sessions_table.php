@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->integer('sector_id');
             $table->integer('movie_id');
-            $table->date('start_at');
-            $table->date('end_at');
+            $table->timestamp('start_at')->useCurrent();
+            $table->timestamp('end_at')->useCurrent();
             $table->timestamps();
         });
     }

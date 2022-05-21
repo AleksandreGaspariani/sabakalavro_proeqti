@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Session;
+use App\Models\Movie;
 use Illuminate\Http\Request;
 
 class SessionController extends Controller
@@ -14,7 +15,8 @@ class SessionController extends Controller
      */
     public function index()
     {
-        $data = Session::all();
+        $data = Session::all()->sortByDesc('updated_at');
+
         return view('pages.index',compact('data'));
     }
 
@@ -47,7 +49,10 @@ class SessionController extends Controller
      */
     public function show($id)
     {
-        //
+        $movie = Movie::find($id)->first();
+        $sessions = Session::where('movie_id',$id)->get();
+
+        return view('session.show',compact('movie','sessions'));
     }
 
     /**

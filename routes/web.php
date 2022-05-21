@@ -35,12 +35,11 @@ Route::get('/movie/show/{id}', [MovieController::class, 'show'])->name('showMovi
 // admin controller
 
 Route::group(['middleware' => 'auth'],function (){
-    Route::get('/movies/buy_ticket/{id}', [OrderController::class, 'checkForTicket']);
 
     Route::get('add/card', [CardController::class, 'create']);
     Route::post('/store-card',[CardController::class, 'store']);
 
-
+    Route::get('sessions/{id}', [SessionController::class, 'show'])->name('see_session');
 
     Route::group(['middleware' => 'admin'],function (){
 
@@ -55,6 +54,7 @@ Route::group(['middleware' => 'auth'],function (){
         Route::get('/movie/add', [MovieController::class, 'create']);
         Route::get('/store_movie', [MovieController::class, 'store']);
         Route::get('/movie/edit/{id}', [MovieController::class, 'edit']);
+        Route::get('/movie/delete/{id}', [MovieController::class, 'destroy']);
         Route::get('/movie/update/{id}', [MovieController::class, 'update']);
         Route::get('/addCategories/{id}', [MovieController::class, 'addCategory']);
         Route::post('/store_category/{id}', [MovieController::class, 'storeCategory']);

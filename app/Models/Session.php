@@ -21,12 +21,12 @@ class Session extends Model
 
     public function sector(): BelongsTo
     {
-        return $this->belongsTo(Sector::class);
+        return $this->hasMany(Sector::class);
     }
 
     public function movie(): HasOne
     {
-        return $this->hasOne(Movie::class);
+        return $this->hasMany(Movie::class);
     }
 
 }

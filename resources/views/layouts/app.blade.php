@@ -16,6 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 {{--    Owl Carousel    --}}
@@ -27,6 +28,7 @@
     <!--  custom styles -->
     <link rel="stylesheet" href="{{asset('/styles/layout.css')}}">
     <link rel="stylesheet" href="{{asset('styles/login.css')}}">
+    <link rel="stylesheet" href="{{asset('styles/adminMovies.css')}}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
