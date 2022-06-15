@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Sector;
+use App\Models\Movie;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -16,17 +17,24 @@ class Session extends Model
         'sector_id',
         'movie_id',
         'start_at',
-        'end_at'
+        'end_at',
+        'price',
+        'language',
     ];
 
-    public function sector(): BelongsTo
+    protected $with =[
+        'movie',
+        'sector'
+    ];
+
+    public function sector()
     {
-        return $this->hasMany(Sector::class);
+        return $this->belongsTo(Sector::class);
     }
 
-    public function movie(): HasOne
+    public function movie()
     {
-        return $this->hasMany(Movie::class);
+        return $this->belongsTo(Movie::class);
     }
 
 }

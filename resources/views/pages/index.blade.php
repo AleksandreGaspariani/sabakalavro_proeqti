@@ -82,7 +82,7 @@
                 </div>
                 <div class="d-flex w-100 flex-wrap chide justify-content-center" id="carouselLatestMoviesWrap">
                     @foreach($todayMovies as $movie)
-                            <a href="/movie/show/{{ $movie->id }}" class="ccard rgb position-relative"
+                            <a href="/movie/show/{{ $movie->id }}" class="ccard rgb position-relative ms-auto me-auto"
                                style="min-height: 50vh;">
                                 <div class="ccard-image" style="
                                     background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url(' {{ $movie->movie_thumbnail }} ');

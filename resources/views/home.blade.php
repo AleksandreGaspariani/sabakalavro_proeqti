@@ -48,13 +48,13 @@
             @if(Auth::user()->role == 1)
                 <div class="d-flex justify-content-center align-items-center bg-black">
                     <a href="/sectors" class="btn btn-outline-light m-3" style="padding: 1.2rem 2rem">
-                        Sector Manipulations
+                        Sectors
                     </a>
                     <a href="/movies" class="btn btn-outline-light m-3" style="padding: 1.2rem 2rem">
-                        Movie Manipulations
+                        Movies
                     </a>
-                    <a href="#" class="btn btn-outline-light m-3" style="padding: 1.2rem 2rem">
-                        Session Manipulation
+                    <a href="/sessions" class="btn btn-outline-light m-3" style="padding: 1.2rem 2rem">
+                        Sessions
                     </a>
                 </div>
             @endif

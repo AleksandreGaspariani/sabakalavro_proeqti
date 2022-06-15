@@ -11,13 +11,9 @@ use App\Models\User;
 
 class OrderController extends Controller
 {
-    public function checkForTicket($id){
-        $ticket = Movie::where('id', $id)->first();
-        $sessions = Session::where('movie_id', $id)->get();
+    public function show($id){
+        $session = Session::find($id)->first();
 
-        $ticket = 'test';
-        $session = 'session';
-
-        return view('pages.ticket', compact('ticket', 'sessions'));
+        return view('order.show',compact('session'));
     }
 }

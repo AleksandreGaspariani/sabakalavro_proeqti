@@ -22,7 +22,6 @@ class PagesController extends Controller
         $geoMovies = Movie::whereIn('id', $geo)->paginate(12);
 // ==========================================================
 
-
         return view('pages.index',compact('todayMovies','upcomingMovies','geoMovies'));
     }
     function login(){

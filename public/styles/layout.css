@@ -166,3 +166,15 @@
     -webkit-text-stroke: unset;
     backdrop-filter: blur(3px);
 }
+
+@media only screen and (max-width: 600px) {
+    #adminMovies {
+        flex-direction: column !important;
+    }
+    #adminMovies > div {
+        width: 100% !important;
+    }
+    .cwidth_100 {
+        width: 100% !important;
+    }
+}

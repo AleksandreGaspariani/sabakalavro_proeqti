@@ -1,18 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid vh-100 d-flex pt-5 bg-dark">
-        <div class="w-25"> <!-- Left side menu -->
-            <a href="sector/add" class="btn btn-outline-success w-50 ">Add Hall</a>
+    <div class="container-fluid vh-100 d-flex pt-5 bg-dark flex-column">
+        <div class="w-100 d-flex justify-content-evenly"> <!-- Left side menu -->
+            <h1 class="text-start text-white-50">Halls: </h1>
+            <a href="sector/add" class="btn btn-outline-success d-flex align-items-center">Add Hall</a>
         </div>
 
-        <div class="w-75">  <!-- Middle side menu -->
+        <div class="w-100">  <!-- Middle side menu -->
             @if(isset($err))
                 <small class="text-success">{{ $err }}</small>
             @elseif(isset($success))
                 <small class="text-success">{{ $success }}</small>
             @endif
-            <h1 class="text-start text-white-50">Halls: </h1>
+
             @if(isset($data))
                 <div class="d-flex justify-content-center w-100 mt-5">
                     <div class="list-group ms-auto me-auto w-75 d-flex">

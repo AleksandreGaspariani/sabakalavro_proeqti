@@ -19,6 +19,8 @@ return new class extends Migration
             $table->integer('movie_id');
             $table->timestamp('start_at')->useCurrent();
             $table->timestamp('end_at')->useCurrent();
+            $table->integer('price');
+            $table->text('language');
             $table->timestamps();
         });
     }

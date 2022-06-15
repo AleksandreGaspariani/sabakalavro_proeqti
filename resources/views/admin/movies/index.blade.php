@@ -2,7 +2,7 @@
 
 @section('content')
 {{--    <link rel="stylesheet" href="{{ asset('styles/movies.css') }}">--}}
-<div class="container-fluid d-flex pt-5 min-vh-100 bg-dark" style="overflow-x: hidden">
+<div class="container-fluid d-flex pt-5 min-vh-100 bg-dark" style="overflow-x: hidden" id="adminMovies">
     <div class="w-25">
         <a href="/movie/add" class="btn btn-success">Add Movie</a>
     </div>
@@ -17,7 +17,7 @@
             <div class="d-flex justify-content-center align-items-center w-100 mt-5">
                 <div class="list-group w-100">
                     {{-- ########### draw movies ########## --}}
-                    <div class="d-lg-flex flex-lg-wrap">
+                    <div class="d-flex flex-wrap w-100">
                     @foreach($movies as $movie)
                             <div class="movie">
                                 <header class="movie-header"> <p> {{ $movie->movie_name }} </p> </header>
